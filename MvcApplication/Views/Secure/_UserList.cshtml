@@ -1,0 +1,33 @@
+﻿@model List<EncryptedToken.Service.DataStore.UserRole>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">All Roles/Users</div>
+                <div class="panel-body">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            @*<thead>
+                                <tr>
+                                    <th>All Roles/Users</th>
+                                </tr>
+                            </thead>*@
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:void(0);" title="Detail" onclick="secureMvc.showUserDetail(@item.Id)"> @item.RoleTitle </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+﻿@model EncryptedToken.Service.DataStore.Permission
+@{
+    var tuple = ViewData["secureTuple"] as Tuple<List<EncryptedToken.Service.DataStore.UserRole>, List<EncryptedToken.Service.DataStore.UserRole>>;
+
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">@Model.Caption &nbsp;&nbsp;<strong>[&nbsp;</strong>@Model.Name<strong>&nbsp;]</strong></div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Denied Roles/Users:</label>
+                                <select multiple class="form-control selectList" id="NotAllowedItems">
+                                    @foreach (var item in tuple.Item1)
+                                    {
+                                        <option value="@item.Id">@item.RoleTitle</option>
+                                    }
+                                </select>
+                            </div>
+                            <p>Total : @tuple.Item1.Count </p>
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="form-group col-lg-offset-5">
+                                <a href="javascript:void(0);" title="Right" onclick="secureMvc.assignUsers();">
+                                    <span style="font-size: 5em;" class="glyphicon glyphicon-arrow-right"></span>
+                                </a>
+                            </div>
+                            <div class="form-group col-lg-offset-5">
+                                <a href="javascript:void(0);" title="Left" onclick="secureMvc.removeUsers();">
+                                    <span style="font-size: 5em;" class="glyphicon glyphicon-arrow-left"></span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel2">Allowed Roles/Users:</label>
+                                <select multiple class="form-control selectList" id="AllowedItems">
+                                    @foreach (var item in tuple.Item2)
+                                    {
+                                        <option value="@item.Id">@item.RoleTitle</option>
+                                    }
+                                </select>
+                            </div>
+                            <p>Total : @tuple.Item2.Count </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
