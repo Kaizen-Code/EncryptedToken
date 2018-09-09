@@ -75,9 +75,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NugetNotes.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\EncryptedToken.Service\EncryptedToken.Service.csproj">
       <Project>{0090dafd-7c3c-4e17-83e2-4af4bbb3ff7e}</Project>
       <Name>EncryptedToken.Service</Name>

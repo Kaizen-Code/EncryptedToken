@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>Kaizen.Mvc.EncryptedToken</id>
-    <version>1.0.1.2</version>
+    <version>1.0.1.3</version>
     <title>Kaizen.Mvc.EncryptedToken</title>
-    <authors>arpanvgm</authors>
+    <authors>Kaizen</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>https://drive.google.com/uc?export=download&id=1OFunrUhaPEWRGKsNQBayi8AhJx_pKHow</iconUrl>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Kaizen-Code/EncryptedToken</projectUrl>
+    <iconUrl>https://drive.google.com/uc?export=download&amp;id=1OFunrUhaPEWRGKsNQBayi8AhJx_pKHow</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Encrypted Token based authentication and authorization for MVC Projects</description>
-    <releaseNotes>Staging release</releaseNotes>
+    <releaseNotes>Database Initialization feature is configured</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>Encryption Token Secure Authentication Authorization Enctrypted Authorize</tags>
     <dependencies>
