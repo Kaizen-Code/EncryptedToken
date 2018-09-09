@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MvcWebApplication.Models.Client>
+@using EncryptedToken.Service
+@{
+
+    bool createPermission, editPermission, deletePermission, detailViewPermission;
+    createPermission = editPermission = deletePermission = detailViewPermission = false;
+    var token = ServiceFactory.GetTokenState(); // using EncryptedToken.Service
+    if (token != null)
+    {
+        createPermission = token.IsAllowed((int)PermissionTable.Client_Create);
+        editPermission = token.IsAllowed((int)PermissionTable.Client_Edit);
+        deletePermission = token.IsAllowed((int)PermissionTable.Client_Delete);
+        detailViewPermission = token.IsAllowed((int)PermissionTable.Client_DetailView);
+    }
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<p>
+    @if (createPermission)
+    {  // following link will be redered if user has permission to create new client
+        Html.ActionLink("Create New", "Create");
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @if (editPermission)
+                {
+                    @:  @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                }
+                @if (detailViewPermission)
+                {
+                    @:  @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                }
+                @if (deletePermission)
+                {
+                   @: @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

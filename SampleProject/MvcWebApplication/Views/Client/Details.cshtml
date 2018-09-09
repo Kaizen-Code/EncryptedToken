@@ -1,0 +1,40 @@
+﻿@model MvcWebApplication.Models.Client
+@using EncryptedToken.Service
+
+@{
+    ViewBag.Title = "Details";
+    var token = ServiceFactory.GetTokenState(); // using EncryptedToken.Service
+    var editPermission = token.IsAllowed((int)PermissionTable.Client_Edit);
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (editPermission)
+    {
+        @:  @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    }
+    @Html.ActionLink("Back to List", "Index")
+</p>

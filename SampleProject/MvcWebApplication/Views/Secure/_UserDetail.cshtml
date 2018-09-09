@@ -1,0 +1,60 @@
+﻿@model Tuple<List<EncryptedToken.Service.DataStore.Permission>, List<EncryptedToken.Service.DataStore.Permission>>
+@{
+    var user = ViewData["UserRole"] as EncryptedToken.Service.DataStore.UserRole ;
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">@user.RoleTitle</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Denied Permission list:</label>
+                                <select multiple class="form-control selectList" id="NotAllowedItems">
+                                    @foreach (var item in Model.Item1)
+                                    {
+                                        <option value="@item.Id">@item.Caption</option>
+                                    }
+                                </select>
+                            </div>
+                            <p>Total : @Model.Item1.Count </p>
+                        </div>
+                        <div class="col-md-4 ">
+
+                            <div class="form-group col-lg-offset-5">
+                                <a href="javascript:void(0)" title="Right" onclick="secureMvc.assignPermission();">
+                                    <span style="font-size: 5em;" class="glyphicon glyphicon-arrow-right"></span>
+                                </a>
+                            </div>
+                            <div class="form-group col-lg-offset-5">
+                                <a href="javascript:void(0)" title="Left" onclick="secureMvc.removePermission();">
+                                    <span style="font-size: 5em;" class="glyphicon glyphicon-arrow-left"></span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel2">Allowed Permission list:</label>
+                                <select multiple class="form-control selectList" id="AllowedItems">
+                                    @foreach (var item in Model.Item2)
+                                    {
+                                        <option value="@item.Id">@item.Caption</option>
+                                    }
+                                </select>
+                            </div>
+                            <p>Total : @Model.Item2.Count </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

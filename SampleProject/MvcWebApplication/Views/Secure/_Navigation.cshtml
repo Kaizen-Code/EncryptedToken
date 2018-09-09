@@ -1,0 +1,27 @@
+﻿@*<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Secure Module</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Configuration</a></li>
+                    <li><a href="http://username:pk@secure.test/Mvc100/UserDetail">Roles/User List</a></li>
+                    <li><a href="#">Permission List</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>*@
+
+<ul id="menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="#" onclick="secureMvc.ShowPermissions();">Permissions</a></li>
+    <li><a href="#" onclick="secureMvc.ShowUsers();">User Roles</a></li>
+    @Html.ActionLink("Logout","Logout","Secure")
+    @*<li><a href="#" onclick="secureMvc.showLoggers();">Current Loggers</a></li>
+    <li><a href="#" onclick="secureMvc.showLoginHistory();">Login History</a></li>*@
+
+
+</ul>

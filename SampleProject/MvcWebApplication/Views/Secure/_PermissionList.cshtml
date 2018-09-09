@@ -1,0 +1,39 @@
+﻿@model List<EncryptedToken.Service.DataStore.Permission>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">All Permissions</div>
+                <div class="panel-body">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Caption</th>
+                                    <th>Desc</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        <a href="javascript:void(0);" title="Detail" onclick="secureMvc.showPermissionDetail(@item.Id)">@item.Caption</a>
+                                    </td>
+                                    <td>@item.Description</td>
+                                    <td><a href="javascript:void(0);" title="Edit" onclick="secureMvc.editPermission(@item.Id)">Edit</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
