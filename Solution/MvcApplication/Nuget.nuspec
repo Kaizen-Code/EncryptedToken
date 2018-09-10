@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Kaizen.Mvc.EncryptedToken</id>
-    <version>1.0.1.3</version>
+    <version>1.0.1.4</version>
     <title>Kaizen.Mvc.EncryptedToken</title>
     <authors>Kaizen</authors>
     <owners>$author$</owners>
@@ -11,7 +11,7 @@
     <iconUrl>https://drive.google.com/uc?export=download&amp;id=1OFunrUhaPEWRGKsNQBayi8AhJx_pKHow</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Encrypted Token based authentication and authorization for MVC Projects</description>
-    <releaseNotes>Database Initialization feature is configured</releaseNotes>
+    <releaseNotes>Database.SetInitializer is implemented to create required tables</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>Encryption Token Secure Authentication Authorization Enctrypted Authorize</tags>
     <dependencies>
